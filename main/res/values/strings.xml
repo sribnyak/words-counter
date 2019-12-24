@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Counter</string>
+    <string name="hint_text">Write your text here</string>
+</resources>
