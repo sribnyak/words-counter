@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.TextView
+import java.security.KeyStore
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +29,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isWord(s: String): Boolean {
-        return s.isNotBlank() && s != "-"
+        for (c in s)
+            if (c.isLetter() || c in '0'..'9')
+                return true
+        return false
     }
 
     private fun countWords(text: String): Int {
