@@ -6,7 +6,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.TextView
-import java.security.KeyStore
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun countWords(text: String): Int {
-        val items = text.split(' ', '\n', '\t')
+        val items = text.split(' ', '\n', '\t', '\u00A0')
         var cnt = 0
         for (item in items)
             if (isWord(item))
